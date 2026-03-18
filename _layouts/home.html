@@ -18,4 +18,15 @@ layout: archive
   {% include documents-collection.html locale=locale entries=posts type=entries_layout %}
 </div>
 
+{% if page.medium_articles and page.medium_articles.size > 0 %}
+  <h3 class="archive__subtitle">{{ page.medium_section_title | default: "精選文章" }}</h3>
+  <ul>
+    {% for article in page.medium_articles %}
+      <li>
+        <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
 {% include paginator.html locale=locale %}
