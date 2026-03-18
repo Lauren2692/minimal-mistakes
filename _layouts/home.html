@@ -19,3 +19,12 @@ layout: archive
 </div>
 
 {% include paginator.html locale=locale %}
+
+{% if page.medium_articles %}
+  <h3 class="archive__subtitle">Medium 文章精選</h3>
+  <ul>
+    {% for article in page.medium_articles %}
+      <li><a href="{{ article.url }}" target="_blank" rel="noopener noreferrer">{{ article.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %}
